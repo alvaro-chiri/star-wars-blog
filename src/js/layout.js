@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
+import { Home } from "./views/Home.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -28,9 +28,6 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
 						<Route exact path="/people/:theid">
 							<People />
 						</Route>
@@ -39,6 +36,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/vehicles/:theid">
 							<Vehicles />
+						</Route>
+						<Route>
+							<h1>Not found!</h1>
 						</Route>
 					</Switch>
 					<Footer />
