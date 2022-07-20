@@ -16,7 +16,7 @@ function People() {
     <>
       <div>
         {people.map( (item, index) => 
-          <div key={index} className="card" style={{ width: "18rem" }}>
+          <div key={index} className="card" style={{ width: "18rem", display: "inline-block",}}>
             <img src="..." className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title">{item.name}</h5>

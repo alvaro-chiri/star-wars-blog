@@ -1,0 +1,16 @@
+.container {
+    height: 300px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+}
+
+body {
+    background-image: url("https://3.bp.blogspot.com/-a9a9bZR5tq4/VivbqofnTTI/AAAAAAAAOI0/Q-VnRytpAQg/s1600/Screen%2BShot%2B2015-10-24%2Bat%2B3.26.30%2BPM.png");
+    background-size: 150%;
+}
+
+h1 {
+    color: yellow;
+
+}
