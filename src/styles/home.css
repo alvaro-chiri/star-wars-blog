@@ -1,8 +1,9 @@
 .container {
     height: 300px;
     overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-y: scroll;
     flex-wrap: nowrap;
+    columns: auto;
 }
 
 body {
@@ -13,4 +14,9 @@ body {
 h1 {
     color: yellow;
 
+}
+
+.myOverflow {
+    overflow-x: scroll;
+    flex-shrink: 0;
 }
