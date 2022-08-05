@@ -1,40 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { getAllPeople } from "../component/api";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { Card, Button, Col, Row } from "react-bootstrap";
 
-function People() {
-  const [people, setPeople] = useState([]);
-
-  useEffect(() => {
-    const fn = async () => {
-      const apiPeople = await getAllPeople();
-      return setPeople(apiPeople);
-    };
-    fn();
-  }, []);
+const People = () => {
+  const { store, actions } = useContext(Context);
 
   return (
-    <>
-      <div style={{display: "flex", overflowX: "scroll", flexWrap: "none", flexShrink: "0"}}>
-        {people.map( (item, index) => 
-          <div key={index} className="card" style={{width: "18rem", display: "inline-block", margin: "10px", flexShrink: "0"}}>
-            <img src="https://picsum.photos/400/200" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">{item.name}</h5>
-              <p className="card-text">
-                {item.url}
-              </p>
-              <a href="#" className="btn btn-primary">
-                Learn more!
-              </a>
-              <a href="#" className="favButton btn btn-warning">
-              ♡
-              </a>
-            </div>
-          </div>
-        )}
-      </div>
-    </>
+    <div
+      style={{
+        display: "flex",
+        overflowX: "scroll",
+        flexWrap: "none",
+        flexShrink: "0",
+      }}
+    >
+      {store.people.map((item, index) => {
+        return (
+          <Col key={index}>
+            <Card className="bg-dark text-white" style={{width:"18rem", marginLeft: "10px"}}>
+              <Card.Img
+                className="imagen"
+                variant="top"
+                src="https://media.wired.co.uk/photos/606da2976a2b7484dab92f59/4:3/w_1704,h_1278,c_limit/star-wars-force-awakens-r2d2.jpg"
+              />
+              <Card.Body>
+                <Card.Title>{item.name}</Card.Title>
+                <Link to={"/people/" + item.uid}>
+                  <Button variant="primary">Learn More</Button>
+                </Link>
+                <Button
+                  className="heart"
+                  variant="warning"
+                >
+                  <i className="far fa-heart" />
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        );
+      })}
+    </div>
   );
-}
+};
 
 export default People;

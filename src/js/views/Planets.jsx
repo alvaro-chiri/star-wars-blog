@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { getAllPlanets } from "../component/api";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom"
 
-function Planets() {
-  const [planets, setPlanets] = useState([]);
-
-  useEffect(() => {
-    const fn = async () => {
-      const apiPlanets = await getAllPlanets();
-      return setPlanets(apiPlanets);
-    };
-    fn();
-  }, []);
+const Planets = () => {
+  const {store, actions} = useContext(Context)
 
   return (
     <>
       <div style={{display: "flex", overflowX: "scroll", flexWrap: "none", flexShrink: "0"}}>
-        {planets.map( (item, index) => 
+        {store.planets.map( (item, index) => 
           <div key={index} className="card" style={{width: "18rem", display: "inline-block", margin: "10px", flexShrink: "0"}}>
             <img src="https://picsum.photos/400/200" className="card-img-top" alt="..." />
             <div className="card-body">

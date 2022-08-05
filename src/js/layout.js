@@ -12,6 +12,7 @@ import { Footer } from "./component/footer";
 import People from "./views/People.jsx";
 import Planets from "./views/Planets.jsx";
 import Vehicles from "./views/Vehicles.jsx";
+import Person from "./views/onePerson.jsx";
 
 //create your first component
 const Layout = () => {
@@ -28,15 +29,14 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/people">
-							<h1>People</h1>
-							<People />
+						<Route exact path="/people/:id">
+							<Person />
 						</Route>
-						<Route exact path="/planets">
+						<Route exact path="/planets/:id">
 							<h1>Planets</h1>
 							<Planets />
 						</Route>
-						<Route exact path="/vehicles">
+						<Route exact path="/vehicles/:id">
 							<h1>Ships</h1>
 							<Vehicles />
 						</Route>
