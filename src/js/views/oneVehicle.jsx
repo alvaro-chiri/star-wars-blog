@@ -2,12 +2,12 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const Planet = () => {
+const Vehicle = () => {
   const { store, actions } = useContext(Context);
   const { id } = useParams();
 
   useEffect(() => {
-    actions.getPlanet(id);
+    actions.getVehicle(id);
   }, []);
 
   return (
@@ -19,7 +19,7 @@ const Planet = () => {
             src="https://media.wired.co.uk/photos/606da2976a2b7484dab92f59/4:3/w_1704,h_1278,c_limit/star-wars-force-awakens-r2d2.jpg"
           />
           <div className="col text-center">
-            <h1 className="indTitle">{store.planet.name}</h1>
+            <h1 className="indTitle">{store.vehicle.name}</h1>
             <h4>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis
               tincidunt neque, id consectetur felis. Nam vitae lacus orci. Morbi
@@ -39,24 +39,24 @@ const Planet = () => {
         </div>
         <div className="row description">
           <div className="col">
-            <h3> Climate:</h3>
-            <h3>{store.planet.climate}</h3>
+            <h3> Model:</h3>
+            <h3>{store.vehicle.model}</h3>
           </div>
           <div className="col">
-            <h3>Population:</h3>
-            <h3>{store.planet.population}</h3>
+            <h3>Cost in Credits:</h3>
+            <h3>{store.vehicle.cost_in_credits}</h3>
           </div>
           <div className="col">
-            <h3>Orbital Period:</h3>
-            <h3>{store.planet.orbital_period}</h3>
+            <h3>Length:</h3>
+            <h3>{store.vehicle.length}</h3>
           </div>
           <div className="col">
-            <h3>Rotation Period:</h3>
-            <h3>{store.planet.rotation_period}</h3>
+            <h3>Crew:</h3>
+            <h3>{store.vehicle.crew}</h3>
           </div>
           <div className="col">
-            <h3>Diameter:</h3>
-            <h3>{store.planet.diameter}</h3>
+            <h3>Max Atmosphering Speed:</h3>
+            <h3>{store.vehicle.max_atmosphering_speed}</h3>
           </div>
         </div>
       </div>
@@ -64,4 +64,4 @@ const Planet = () => {
   );
 };
 
-export default Planet;
+export default Vehicle;
