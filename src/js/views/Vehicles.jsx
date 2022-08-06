@@ -1,18 +1,28 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Card, Button, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Vehicles = () => {
-  const {store, actions} = useContext(Context)
+  const { store, actions } = useContext(Context);
 
   return (
     <>
-      <div style={{display: "flex", overflowX: "scroll", flexWrap: "none", flexShrink: "0"}}>
-        {store.vehicles.map( (item, index) => {
+      <div
+        style={{
+          display: "flex",
+          overflowX: "scroll",
+          flexWrap: "none",
+          flexShrink: "0",
+        }}
+      >
+        {store.vehicles.map((item, index) => {
           return (
             <Col key={index}>
-              <Card className="bg-dark text-white" style={{width:"18rem", marginLeft: "10px"}}>
+              <Card
+                className="bg-white text-black"
+                style={{ width: "18rem", marginLeft: "10px" }}
+              >
                 <Card.Img
                   className="imagen"
                   variant="top"
@@ -23,22 +33,17 @@ const Vehicles = () => {
                   <Link to={"/vehicles/" + item.uid}>
                     <Button variant="primary">Learn More</Button>
                   </Link>
-                  <Button
-                    className="heart"
-                    variant="warning"
-                  >
+                  <Button className="favButton heart" variant="warning">
                     <i className="far fa-heart" />
                   </Button>
                 </Card.Body>
               </Card>
             </Col>
           );
-        }
-          
-        )}
+        })}
       </div>
     </>
   );
-}
+};
 
 export default Vehicles;

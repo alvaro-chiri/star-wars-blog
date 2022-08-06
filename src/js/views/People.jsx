@@ -18,19 +18,19 @@ const People = () => {
       {store.people.map((item, index) => {
         return (
           <Col key={index}>
-            <Card className="bg-dark text-white" style={{width:"18rem", marginLeft: "10px"}}>
+            <Card className="bg-white text-black" style={{width:"18rem", marginLeft: "10px"}}>
               <Card.Img
                 className="imagen"
                 variant="top"
                 src="https://media.wired.co.uk/photos/606da2976a2b7484dab92f59/4:3/w_1704,h_1278,c_limit/star-wars-force-awakens-r2d2.jpg"
               />
               <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
+                <Card.Title>{item.name} </Card.Title>
                 <Link to={"/people/" + item.uid}>
                   <Button variant="primary">Learn More</Button>
                 </Link>
                 <Button
-                  className="heart"
+                  className="favButton heart"
                   variant="warning"
                 >
                   <i className="far fa-heart" />

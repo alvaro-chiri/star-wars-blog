@@ -4,3 +4,27 @@
 .favButton {
     float: right;
 }
+
+.personContainer {
+    margin: auto;
+    width: 1600px;
+    padding: 10px;
+    background-color: white;
+}
+
+.indPicture {
+    width: 40rem;
+}
+
+.indTitle {
+    color: black;
+}
+
+.description {
+    border-top: 3px solid blue;
+    margin-top: 30px;
+}
+
+h3 {
+    color: blue;
+}
