@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       // currently working on this to make the favorites function
       addFavorite: (name, id, category) => {
         const favorite = {name, id, category}
-        console.log("get Store", getStore())
+        console.log("get Store", getStore().favorites)
         const oldFavorites = [getStore().favorites]
         setStore({favorites: oldFavorites.push(favorite)})
         console.log(oldFavorites, favorite)
