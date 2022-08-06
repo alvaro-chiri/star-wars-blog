@@ -32,7 +32,9 @@ const People = () => {
                 <Button
                   className="favButton heart"
                   variant="warning"
+                  onClick={ () => actions.addFavorite(item.name, item.uid, "people")}
                 >
+                
                   <i className="far fa-heart" />
                 </Button>
               </Card.Body>

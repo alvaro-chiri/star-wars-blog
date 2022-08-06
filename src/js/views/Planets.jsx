@@ -33,7 +33,7 @@ const Planets = () => {
                   <Link to={"/planets/" + item.uid}>
                     <Button variant="primary">Learn More</Button>
                   </Link>
-                  <Button className="favButton heart" variant="warning">
+                  <Button className="favButton heart" variant="warning" onClick={ () => actions.addFavorite(item.name, item.uid, "planets")}>
                     <i className="far fa-heart" />
                   </Button>
                 </Card.Body>

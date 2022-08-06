@@ -7,8 +7,18 @@ const getState = ({ getStore, getActions, setStore }) => {
       people: [],
       planets: [],
       vehicles: [],
+      favorites: []
     },
     actions: {
+      // currently working on this to make the favorites function
+      addFavorite: (name, id, category) => {
+        const favorite = {name, id, category}
+        console.log("get Store", getStore())
+        const oldFavorites = [getStore().favorites]
+        setStore({favorites: oldFavorites.push(favorite)})
+        console.log(oldFavorites, favorite)
+        console.log("current favorites", getStore().favorites)
+      },
       getPerson: async (uid) => {
         try {
           const response = await fetch(
